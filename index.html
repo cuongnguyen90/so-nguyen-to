@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<label>Nhap so bat dau</label>
+<br/>
+<input type="number" name="" id="start">
+<br/>
+<label>Nhap so luong hien thi</label>
+<br/>
+<input type="number" name="" id="total">
+<br/>
+<input type="button" value="Get" onclick="display(document.getElementById('start').value,document.getElementById('total').value)">
+<br/>
+
+<body>
+<script>
+
+
+    function checkSoNguyenTo(n) {
+        if ( n == 2){
+            return false;
+        }
+        else if (n > 2 && n%2 != 0  ){ // Check so le va lon hon 2
+            // Check so le
+            for (i = 3 ; i < (n-1);i+=2){
+                if (n%i != 0){
+                    return true;
+                }
+            }
+        }
+    }
+    function display(n,count_max){
+        count = 1;
+        do {
+
+            if (checkSoNguyenTo(n)){
+                document.write(n+"<br/>")
+                n++;
+                count++;
+            }
+            n++;
+
+        }
+        while (count <= count_max)
+    }
+
+
+
+
+</script>
+</body>
+</html>
